@@ -12,7 +12,7 @@ PokeGallery is a fun application that allows users to see a gallery of Pokemon, 
 
 ### Wireframe
 
-![application mockup](/Users/aliciaglenn1/Desktop/GA_Lessons/api_redo/img "wireframe of application")
+![application mockup](./img/pokemockup.png "wireframe of application")
 
 ### Getting Started
 
