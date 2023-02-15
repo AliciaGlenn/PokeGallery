@@ -9,11 +9,24 @@
 //     console.log(data.species.name);
 //   });
 
+// USING API DATA TO POPULATE THE DOM
+
+//select/cache the DMO elements we're working with
+const $name = $("#name");
+const $image = $("#image");
+const $firstability = $("#firstability");
+const $secondability = $("#secondability");
+const $moves = $("#moves");
+
 $.ajax({
   url: "https://pokeapi.co/api/v2/pokemon/ditto",
 }).then(
   function (data) {
-    console.log(data);
+    $name.text(data.name);
+    $image.text(data.sprites.back_default);
+    $firstability.text(data.abilities[0].ability.name);
+    $secondability.text(data.abilities[1].ability.name);
+    $moves.text(data.moves[0].move.name);
   },
   function (error) {
     console.log("bad request", error);
