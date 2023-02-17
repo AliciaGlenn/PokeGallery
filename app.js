@@ -33,7 +33,7 @@ function handleGetData(event) {
   userInput = $input.val();
   // getting the user input
   $.ajax({
-    url: "https://pokeapi.co/api/v2/pokemon/ditto" + userInput,
+    url: "https://pokeapi.co/api/v2/pokemon/" + userInput,
   }).then(
     function (data) {
       pokeData = data;
@@ -51,11 +51,11 @@ function handleGetData(event) {
 
 function render() {
   //created render function to take care of transfering the data from the state variable to the DOM.
-  $name.text(data.name);
-  $image.text(data.sprites.back_default);
-  $firstability.text(data.abilities[0].ability.name);
-  $secondability.text(data.abilities[1].ability.name);
-  $moves.text(data.moves[0].move.name);
+  $name.text(pokeData.name);
+  $image.attr("src", pokeData.sprites.front_default);
+  $firstability.text(pokeData.abilities[0].ability.name);
+  $secondability.text(pokeData.abilities[1].ability.name);
+  $moves.text(pokeData.moves[0].move.name);
 }
 
 // 3. Push to github to make sure there's no CORS issues
