@@ -85,8 +85,13 @@ function createPokemonCard(pokemon) {
   const pokemonEl = document.createElement("div");
   pokemonEl.classList.add("pokemon");
 
+  const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+
   const pokeInnerHTML = `
-    ${pokemon.id}
+  <div class ="img-container">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png"
+  </div>
+    ${name}
   `;
   pokemonEl.innerHTML = pokeInnerHTML;
   pokeGallery_container.appendChild(pokemonEl);
