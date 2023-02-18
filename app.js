@@ -37,6 +37,7 @@ function handleGetData(event) {
   }).then(
     function (data) {
       pokeData = data;
+      console.log(data);
       render();
     },
     function (error) {
@@ -60,3 +61,33 @@ function render() {
 
 // 3. Push to github to make sure there's no CORS issues
 // 4. Go to github Pages and it should show console log in console, if it shows a CORS error then that's a problem
+
+const pokeGallery_container = document.getElementById("pokeGallery_container");
+const pokemons_number = 150;
+
+// looping through all pokemon to show up to 150 pokemon
+const fetchPokemons = async () => {
+  for (let i = 1; i <= pokemons_number; i++) {
+    await getPokemon(i);
+  }
+};
+// Getting all the pokemon
+const getPokemon = async (id) => {
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+  const res = await fetch(url);
+  const pokemon = await res.json();
+  createPokemonCard(pokemon);
+};
+
+fetchPokemons();
+
+function createPokemonCard(pokemon) {
+  const pokemonEl = document.createElement("div");
+  pokemonEl.classList.add("pokemon");
+
+  const pokeInnerHTML = `
+    ${pokemon.id}
+  `;
+  pokemonEl.innerHTML = pokeInnerHTML;
+  pokeGallery_container.appendChild(pokemonEl);
+}
