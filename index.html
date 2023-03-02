@@ -19,8 +19,10 @@
   </head>
   <body>
     <div class="parent">
-        <header class="header">PokeGallery</header>
-        <div class="left-side">Left Sidebar</div>
+        <header class="header">PokeGallery
+          <div class="header-right"></div>
+        </header>
+        <div class="left-side"></div>
         <main class="main" > 
           <div class="center" >
             <div class="search-container">
@@ -34,17 +36,19 @@
           </div>
         </main>
         <div class="right-side">
-          <p>Name</p>
+          <div class="pokeHighlight">
+          <p style="font-weight: bold;">Name</p>
           <p id="name"></p>
-          <p>Image</p>
+          <p style="font-weight: bold;">Image</p>
           <img id="image" />
-          <p>First Ability</p>
+          <p style="font-weight: bold;">First Ability</p>
           <!--why does the "P" header have to match in order to render to the DOM? -->
           <p id="firstability"></p>
-          <p>Second Ability</p>
+          <p style="font-weight: bold;">Second Ability</p>
           <p id="secondability"></p>
-          <p>Moves</p>
+          <p style="font-weight: bold;">Moves</p>
           <p id="moves"></p>
+        </div>
         </div>
         <footer class="footer">Footer</footer>
       </div>

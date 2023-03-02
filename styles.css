@@ -8,16 +8,17 @@
 
   .header {
     grid-column: 1 / 4;
-   background-color:blanchedalmond;
+   background-color:white;
    /*font-family: 'Anton', sans-serif;*/
   font-family: 'Luckiest Guy', cursive;
   font-size: 30px;
   padding: 0%;
   }
-  
+
+
   .left-side {
     grid-column: 1 / 2;
-    background-color: blue;
+    background-color: white;
   }
   
   .main {
@@ -27,7 +28,8 @@
   
   .right-side {
     grid-column: 3 / 4;
-    background-color: green;
+    background-color: white;
+    width: 300px;
   }
   
   .footer {
@@ -54,7 +56,7 @@
 
 /* pokeGallery styling */
 
-.pokeGallery_container {
+#pokeGallery_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -62,6 +64,8 @@
   align-items: center;*/
   margin: 0 auto;
   max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .pokemon {
@@ -71,7 +75,23 @@
   padding: 20px;
   margin: 10px;
   text-align: center;
+  max-width: 250px;
 }
+
+.pokeHighlight {
+
+  background-color: lightblue;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: 250px;
+
+}
+
+
+
 
 .pokemon .img-container {
   background-color: rgba(255, 255, 255, 0.6);
